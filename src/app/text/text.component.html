@@ -1,0 +1,12 @@
+<div>
+      <label>Podaj swoją nazwę</label>
+      <h3 class="animated shake slow" *ngIf="nameTooShort">Wpisz nazwę dłuższą niż dwa znaki</h3>
+      <input type="text" placeholder="Wpisz swoją nazwę, jak chesz się przedstawić" [(ngModel)]="userName" />
+
+      <h3 class="animated shake slow" *ngIf="messageTooShort">Wpisz wiadomość</h3>
+      <textarea placeholder="Wpisz wiadomość" [(ngModel)]="userMessage"></textarea>
+
+      <button (click)="onAddMessage()" (mouseenter)="buttonScaleOn()" #addClassForButton (mouseleave)="buttonScaleOff()" #addClassForButton>Dodaj</button>
+       <div class="another-test" #div></div>
+</div>
+

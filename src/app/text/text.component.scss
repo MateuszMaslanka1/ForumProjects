@@ -1,0 +1,51 @@
+.class-for-selection{
+
+}
+
+h3{
+  margin-left: 1.5rem;
+  color: #900000;
+}
+
+textarea{
+  border: 2px solid #900000 ;
+  color: #900000;
+  margin-left: 5px;
+  width: 50rem;
+  height: 25rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+input {
+  display: block;
+  border: 2px solid #900000 ;
+  width: 25rem;
+  height: 2rem;
+  color: #900000;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+label{
+  display: block;
+  width: 25rem;
+  height: 2rem;
+  color: #900000;
+  margin: 0.5rem;
+  padding-top: 1rem;
+}
+
+button{
+  display: block;
+  margin: 0.5rem;
+  width: 20rem;
+  height: 2rem;
+  color: rgb(250, 240, 190);
+  background-color: #900000;
+    &:hover{
+
+    }
+}
+
+

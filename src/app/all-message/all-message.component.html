@@ -1,0 +1,9 @@
+<section>
+  <div [className]="'main-container'">
+        <ul *ngFor="let item of items" [className]="'main-list animated bounceInDown slow'">
+       <li [className]="'user-fromat animated bounceInLeft slow delay-2s'">{{item.userName}}</li>
+          <li [className]="'animated bounceInLeft slow delay-2s'">{{item.userMessage}}</li>
+<!--              <li [className]="'animated bounceInLeft slow'">{{item | json}}</li>-->
+        </ul>
+  </div>
+</section>
