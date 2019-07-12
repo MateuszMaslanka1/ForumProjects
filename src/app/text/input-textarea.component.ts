@@ -4,10 +4,10 @@ import {UserData} from '../model/UserData';
 
 @Component({
   selector: 'app-text',
-  templateUrl: './text.component.html',
-  styleUrls: ['./text.component.scss']
+  templateUrl: './input-textarea.component.html',
+  styleUrls: ['./input-textarea.component.scss']
 })
-export class TextComponent implements OnInit {
+export class InputTextareaComponent implements OnInit {
 
   @ViewChild('addClassForButton', null) addClassForButton: ElementRef;
 
@@ -23,7 +23,6 @@ export class TextComponent implements OnInit {
     this.messageTooShort = this.userMessage.length === 0;
 
     if (!this.nameTooShort && !this.messageTooShort) {
-
       this.service.sendToJson({userName: this.userName, userMessage: this.userMessage});
       this.userName = '';
       this.userMessage = '';

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextComponent } from './text.component';
+import { InputTextareaComponent } from './input-textarea.component';
 
-describe('TextComponent', () => {
-  let component: TextComponent;
-  let fixture: ComponentFixture<TextComponent>;
+describe('InputTextareaComponent', () => {
+  let component: InputTextareaComponent;
+  let fixture: ComponentFixture<InputTextareaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TextComponent ]
+      declarations: [ InputTextareaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TextComponent);
+    fixture = TestBed.createComponent(InputTextareaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

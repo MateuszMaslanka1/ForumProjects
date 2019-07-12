@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     this.angularFireAuth.authState.subscribe( authState => {
       this.showHeader = !isNullOrUndefined(authState);
 
-      this.showHeader !== true ? this.router.navigate(['/login']) :
+      this.showHeader !== true ? this.router.navigate(['/login']) : // ten fragment odpowiada za nawigację po zalogowaniu, dzięki // niemu odrazu po zalgowaiu użytkownik jest przenoszony na stronę głowną aplikacji oprócz tego blokuje dostęp do strony z logowaniem jeśli użytkownik jest zalogowany dodatkowo, w momęcie kiedy przejdziemy na pod stronę np: /all i ją odświerzymy to zostajemy na tej samej pod stronie a nie jesteśmy przenoszeni na główną.
         (window.location.pathname !== '/' && window.location.pathname !== '/login')
         ? this.router.navigate([window.location.pathname]) : this.router.navigate(['']);
     });

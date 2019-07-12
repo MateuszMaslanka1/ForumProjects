@@ -13,12 +13,7 @@ import {AuthService} from '../Services/auth-service';
 })
 export class LoginPageComponent implements OnInit {
 
-  user: Observable<firebase.User>;
-  authenticated = false;
-  passwordForUser;
-  userLogin;
-
-  constructor(public af: AngularFireAuth, public auth: AuthService) {
+  constructor(public auth: AuthService) {
   }
 
   ngOnInit() { }

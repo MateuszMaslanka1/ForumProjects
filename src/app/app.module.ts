@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
-import { TextComponent } from './text/text.component';
+import { InputTextareaComponent } from './text/input-textarea.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import {FormsModule} from '@angular/forms';
@@ -28,7 +28,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AppComponent,
     HeaderComponent,
     MainComponent,
-    TextComponent,
+    InputTextareaComponent,
     AllMessageComponent,
     LoginPageComponent,
   ],

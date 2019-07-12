@@ -14,24 +14,11 @@ import {isNullOrUndefined} from 'util';
 })
 export class AuthGuardService implements CanActivate {
 
-  constructor(private auth: AuthService, private router: Router, public af: AngularFireAuth) { }
-
-   // canActivate(next: ActivatedRouteSnapshot,
-   //             state: RouterStateSnapshot): Observable<boolean> | boolean {
-   //            return this.auth.user
-   //               .pipe(take(1))
-   //               .pipe(map(user => !!user))
-   //               .pipe(tap(loggedIn => {
-   //                 if (!loggedIn){
-   //                   console.log(this.af.authState)
-   //                   this.router.navigate(['']);
-   //                 }
-   //               }) );
-   // }
+  constructor(private auth: AuthService, private router: Router, public angularFire: AngularFireAuth) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    return this.af.authState.pipe(map(auth => {
-      //console.log(auth);
+    return this.angularFire.authState.pipe(map(auth => {
+
       if (isNullOrUndefined(auth)) {
         this.router.navigate(['/login']);
         return false;
