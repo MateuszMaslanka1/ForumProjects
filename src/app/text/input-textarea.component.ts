@@ -18,29 +18,12 @@ export class TextComponent implements OnInit {
   nameTooShort = false;
   messageTooShort = false;
 
-  isHiddenName = true;
-  isHiddenMessage = true;
-
   onAddMessage() {
     this.nameTooShort = this.userName.length < 3;
     this.messageTooShort = this.userMessage.length === 0;
 
-    // if (this.userName.length < 3) {
-    //   this.isHiddenName = false;
-    // } else {
-    //   this.isHiddenName = true;
-    // }
-
-    // if (this.userMessage.length === 0) {
-    //   this.isHiddenMessage = false;
-    // } else {
-    //   this.isHiddenMessage = true;
-    // }
-
-    // if (this.userName.length >= 3 && this.userMessage.length !== 0) {
     if (!this.nameTooShort && !this.messageTooShort) {
-      // this.isHiddenName = true;
-      // this.isHiddenMessage = true;
+
       this.service.sendToJson({userName: this.userName, userMessage: this.userMessage});
       this.userName = '';
       this.userMessage = '';
