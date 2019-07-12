@@ -13,10 +13,21 @@ export class AllMessageComponent implements OnInit {
   constructor(private service: JsonServerService) { }
 
   items;
+  jsonToBeUsed = [];
+  item2;
 
   ngOnInit() {
-    // console.log(this.service.getFromJson());
-    this.items = this.service.getFromJson().subscribe(response => this.items = response );
+     this.service.getFromJson().subscribe(response => {
+     this.items = response;
+
+     for (const type in response) {
+         this.item2 = {};
+         this.item2.key = type;
+         this.item2.value = response[type];
+         this.jsonToBeUsed.push(this.item2);
+       }
+
+     });
   }
 
 }

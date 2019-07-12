@@ -26,7 +26,7 @@ export class JsonServerService {
   sendToJson(userDataComponent) {
     this.addressList$.next(userDataComponent);
 
-    this.http.post<Array<UserData>>('http://localhost:3000/message', userDataComponent).subscribe(data => {
+    this.http.post<Array<UserData>>('https://dbforforum.firebaseio.com/message.json', userDataComponent).subscribe(data => {
       console.log(data);
     }, error => {
       console.log(error.message);
@@ -35,9 +35,10 @@ export class JsonServerService {
    }
 
    getFromJson() {
-      // this.notesCollection = this.angularFirestore.collection('message');
-      // console.log(this.notesCollection);
-      // return this.note = this.notesCollection.valueChanges();
-      return this.http.get<Array<UserData>>('http://localhost:3000/message');
+       // this.notesCollection = this.angularFirestore.collection('message');
+       // console.log(this.notesCollection);
+       // return this.note = this.notesCollection.valueChanges();
+      // return this.http.get<Array<UserData>>('http://localhost:3000/message');
+     return this.http.get<Array<UserData>>(`https://dbforforum.firebaseio.com/message.json`);
    }
 }
