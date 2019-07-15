@@ -21,9 +21,12 @@ export class MonoDialogComponent {
   }
 
   sendToJson() {
-      this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
-      this.dialogRef.close();
+    this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
+    this.dialogRef.close();
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }
