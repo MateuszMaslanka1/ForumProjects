@@ -26,17 +26,21 @@ export class InputTextareaComponent implements OnInit {
     this.nameTooShort = this.userName.length < 3;
     this.messageTooShort = this.userMessage.length === 0;
 
-    this.dialog.open(MonoDialogComponent, {});
-
     if (!this.nameTooShort && !this.messageTooShort) {
-      this.service.sendToJson({userName: this.userName, userMessage: this.userMessage});
+
+      this.dialog.open(MonoDialogComponent, {
+        data: {
+          userName: this.userName,
+          userMessage: this.userMessage
+        }
+      });
       this.userName = '';
       this.userMessage = '';
     }
   }
 
    buttonScaleOn() {
-      this.addClassForButton.nativeElement.className = 'animated pulse infinite slow';
+    this.addClassForButton.nativeElement.className = 'animated pulse infinite slow';
    }
 
   buttonScaleOff() {
