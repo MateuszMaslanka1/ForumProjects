@@ -13,7 +13,7 @@ import {FormsModule} from '@angular/forms';
 import { AllMessageComponent } from './all-message/all-message.component';
 import {RouterModule, Routes} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 export const firebaseConfig = environment.firebase;
@@ -22,6 +22,9 @@ import { environment } from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { LoginPageComponent } from './login-page/login-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MonoDialogComponent } from './mono-dialog/mono-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     InputTextareaComponent,
     AllMessageComponent,
     LoginPageComponent,
+    MonoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +49,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [ ],
+  entryComponents: [
+    MonoDialogComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

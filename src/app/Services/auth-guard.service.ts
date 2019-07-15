@@ -18,8 +18,8 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.angularFire.authState.pipe(map(auth => {
-
       if (isNullOrUndefined(auth)) {
+      //  console.log(isNullOrUndefined(auth));
         this.router.navigate(['/login']);
         return false;
       } else {

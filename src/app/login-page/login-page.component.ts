@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {Observable} from 'rxjs';
 import {AuthService} from '../Services/auth-service';
+import {MonoDialogComponent} from '../mono-dialog/mono-dialog.component';
+import {MatDialog} from '@angular/material';
 
 
 @Component({
@@ -15,6 +17,5 @@ export class LoginPageComponent implements OnInit {
 
   constructor(public auth: AuthService) {
   }
-
   ngOnInit() { }
 }
