@@ -12,7 +12,7 @@ import {isNullOrUndefined} from 'util';
 })
 export class AuthGuardService implements CanActivate {
 
-  constructor(private auth: AuthService, private router: Router, public angularFire: AngularFireAuth) { }
+  constructor(public angularFire: AngularFireAuth, private authService: AuthService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.angularFire.authState.pipe(map(auth => {

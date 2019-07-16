@@ -10,7 +10,7 @@ import {isNullOrUndefined} from 'util';
    providedIn: 'root'
  })
  export class IsLoginGuardService {
-   constructor(private auth: AuthService, private router: Router, public angularFire: AngularFireAuth) { }
+   constructor(public angularFire: AngularFireAuth, private auth: AuthService, private router: Router) { }
 
    canActivate(): Observable<boolean> {
      return this.angularFire.authState.pipe(map(auth => {

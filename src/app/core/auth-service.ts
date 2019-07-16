@@ -7,17 +7,17 @@ import {switchMap} from 'rxjs/operators';
 
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import * as firebase from 'firebase';
-import {UserID} from '../model/UserID';
+import {UserIdModel} from '../model/User-id-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-    user: Observable<UserID>;
+    user: Observable<UserIdModel>;
 
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {
-    this.user = this.afAuth.authState.pipe(
-      switchMap((user) => user ? this.firestore.doc<UserID>(`user/${user.uid}`).valueChanges() : of(null)
+  constructor(private angularFireAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {
+    this.user = this.angularFireAuth.authState.pipe(
+      switchMap((user) => user ? this.firestore.doc<UserIdModel>(`user/${user.uid}`).valueChanges() : of(null)
     ));
   }
 
@@ -26,16 +26,8 @@ export class AuthService {
       return this.oAuthLogin(provider);
   }
 
-  private oAuthLogin(provider) {
-    return this.afAuth.auth.signInWithPopup(provider).then((credential) => {
-       console.log(credential.user.uid);
-       this.router.navigate(['/']);
-       this.updateUserdata(credential.user);
-    });
-  }
-
   signOut() {
-    this.afAuth.auth.signOut().then(() => {
+    this.angularFireAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
       localStorage.clear();
       window.open('https://accounts.google.com/Logout', '_blank',
@@ -43,9 +35,17 @@ export class AuthService {
     });
   }
 
+  private oAuthLogin(provider) {
+    return this.angularFireAuth.auth.signInWithPopup(provider).then((credential) => {
+      console.log(credential.user.uid);
+      this.router.navigate(['/']);
+      this.updateUserdata(credential.user);
+    });
+  }
+
   private updateUserdata(user) {
-    const userRef: AngularFirestoreDocument<UserID> = this.firestore.doc(`user/${user.uid}`);
-    const data: UserID = {
+    const userRef: AngularFirestoreDocument<UserIdModel> = this.firestore.doc(`user/${user.uid}`);
+    const data: UserIdModel = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
