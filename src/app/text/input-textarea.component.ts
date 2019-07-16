@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 import {MatDialog} from '@angular/material/dialog';
 import {MonoDialogComponent} from '../mono-dialog/mono-dialog.component';
@@ -9,16 +9,15 @@ import {MonoDialogComponent} from '../mono-dialog/mono-dialog.component';
   templateUrl: './input-textarea.component.html',
   styleUrls: ['./input-textarea.component.scss']
 })
-export class InputTextareaComponent implements OnInit {
+export class InputTextareaComponent {
 
   @ViewChild('addClassForButton', null) addClassForButton: ElementRef;
-
-  constructor(public dialog: MatDialog) { }
-
   userName = '';
   userMessage = '';
   nameTooShort = false;
   messageTooShort = false;
+
+  constructor(public dialog: MatDialog) { }
 
   onAddMessage() {
     this.nameTooShort = this.userName.length < 3;
@@ -40,11 +39,8 @@ export class InputTextareaComponent implements OnInit {
     this.addClassForButton.nativeElement.className = 'animated pulse infinite slow';
    }
 
-  buttonScaleOff() {
+   buttonScaleOff() {
     this.addClassForButton.nativeElement.className = '';
-  }
-
-  ngOnInit() {
-  }
+   }
 }
 

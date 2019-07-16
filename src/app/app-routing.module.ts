@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {AllMessageComponent} from './all-message/all-message.component';
 import {MainComponent} from './main/main.component';
 import {LoginPageComponent} from './login-page/login-page.component';
-import {AuthGuardService} from './Services/auth-guard.service';
-import {AuthService} from './Services/auth-service';
-import {IsLoginGuardService} from './Services/is-login-guard.service';
+import {AuthGuardService} from './core/auth-guard.service';
+import {AuthService} from './core/auth-service';
+import {IsLoginGuardService} from './core/is-login-guard.service';
 
 
 const routes: Routes = [

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {JsonServerService} from '../Services/json-server.service';
+import {JsonServerService} from '../core/json-server.service';
 
 @Component({
   selector: 'app-all-message',
@@ -8,10 +8,10 @@ import {JsonServerService} from '../Services/json-server.service';
 })
 export class AllMessageComponent implements OnInit {
 
-  constructor(private service: JsonServerService) { }
-
   items;
   itemForShow = [];
+
+  constructor(private service: JsonServerService) { }
 
   ngOnInit() {
      this.service.getFromJson().subscribe(response => {

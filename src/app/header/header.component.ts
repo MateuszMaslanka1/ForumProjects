@@ -1,17 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AuthService} from '../Services/auth-service';
+import {Component} from '@angular/core';
+import {AuthService} from '../core/auth-service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
+export class HeaderComponent {
   constructor(public auth: AuthService) { }
-
-  ngOnInit() {
-  }
-
 }

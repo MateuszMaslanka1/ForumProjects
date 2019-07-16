@@ -1,4 +1,4 @@
-export interface UserData {
+export interface UserDataModel {
   userName: string;
   userMessage: string;
 }
