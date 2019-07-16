@@ -16,11 +16,15 @@ export class MonoDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<MonoDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private service: JsonServerService) {
-
     console.log(this.data.userName);
   }
 
-  sendToJson() {
+  sendToJsonServer() {
+    this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
+    this.dialogRef.close();
+  }
+
+  deleteToJsonServer() {
     this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
     this.dialogRef.close();
   }

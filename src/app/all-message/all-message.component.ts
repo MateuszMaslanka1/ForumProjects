@@ -3,6 +3,7 @@ import {JsonServerService} from '../Services/json-server.service';
 import {UserData} from '../model/UserData';
 import {Observable} from 'rxjs';
 import * as firebase from 'firebase';
+import {element} from 'protractor';
 
 @Component({
   selector: 'app-all-message',
@@ -25,6 +26,14 @@ export class AllMessageComponent implements OnInit {
          this.itemForShow.push(this.items);
        }
      });
+  }
+
+  takeMessageKey(event: any) {
+      this.service.deleteFromJson(event.key).then(variable => {
+        this.itemForShow = this.itemForShow.filter(el =>
+          el.key !== event.key
+        );
+      });
   }
 
 }

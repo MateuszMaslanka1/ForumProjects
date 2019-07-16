@@ -3,6 +3,7 @@
         <ul *ngFor="let item of itemForShow" [className]="'main-list'">
         <li [className]="'user-fromat'">{{item.value.userName}}</li>
         <li [className]="'animated'">{{item.value.userMessage}}</li>
+        <button (click)="takeMessageKey(item)">Usuń</button>
         </ul>
   </div>
 </section>

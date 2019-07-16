@@ -27,7 +27,6 @@ export class InputTextareaComponent implements OnInit {
     this.messageTooShort = this.userMessage.length === 0;
 
     if (!this.nameTooShort && !this.messageTooShort) {
-
       this.dialog.open(MonoDialogComponent, {
         data: {
           userName: this.userName,
