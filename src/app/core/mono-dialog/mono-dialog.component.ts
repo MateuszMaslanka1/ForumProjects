@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {JsonServerService} from '../core/json-server.service';
+import {FirebaseServiceService} from '../firebase-service.service';
 
 @Component({
   selector: 'app-mono-dialog',
@@ -13,7 +13,8 @@ export class MonoDialogComponent {
   userMessage = '';
 
   constructor(
-    public dialogRef: MatDialogRef<MonoDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private service: JsonServerService) {}
+    public dialogRef: MatDialogRef<MonoDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+    private service: FirebaseServiceService) {}
 
   sendToJsonServer() {
     this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthService} from './auth-service';
+import {AuthService} from '../auth-service';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
@@ -9,7 +9,7 @@ import {isNullOrUndefined} from 'util';
 @Injectable({
    providedIn: 'root'
  })
- export class IsLoginGuardService {
+ export class LoginGuardService {
    constructor(public angularFire: AngularFireAuth, private auth: AuthService, private router: Router) { }
 
    canActivate(): Observable<boolean> {

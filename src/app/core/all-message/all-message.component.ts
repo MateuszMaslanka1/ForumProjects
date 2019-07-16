@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {JsonServerService} from '../core/json-server.service';
+import {FirebaseServiceService} from '../firebase-service.service';
 
 @Component({
   selector: 'app-all-message',
@@ -11,7 +11,7 @@ export class AllMessageComponent implements OnInit {
   items;
   itemForShow = [];
 
-  constructor(private service: JsonServerService) { }
+  constructor(private service: FirebaseServiceService) { }
 
   ngOnInit() {
      this.service.getFromJson().subscribe(response => {

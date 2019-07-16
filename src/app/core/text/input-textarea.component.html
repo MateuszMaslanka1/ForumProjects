@@ -6,7 +6,7 @@
       <h3 class="animated shake slow" *ngIf="messageTooShort">Wpisz wiadomość</h3>
       <textarea placeholder="Wpisz wiadomość" [(ngModel)]="userMessage"></textarea>
 
-      <button (click)="onAddMessage()" (mouseenter)="buttonScaleOn()" #addClassForButton (mouseleave)="buttonScaleOff()" #addClassForButton>Dodaj</button>
+      <button (click)="onAddMessage()" (mouseenter)="buttonScaleEntable()" #addClassForButton (mouseleave)="buttonScaleDistable()" #addClassForButton>Dodaj</button>
        <div class="another-test" #div></div>
 </div>
 

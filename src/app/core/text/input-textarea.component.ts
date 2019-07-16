@@ -35,11 +35,11 @@ export class InputTextareaComponent {
     }
   }
 
-   buttonScaleOn() {
+   buttonScaleEntable() {
     this.addClassForButton.nativeElement.className = 'animated pulse infinite slow';
    }
 
-   buttonScaleOff() {
+   buttonScaleDistable() {
     this.addClassForButton.nativeElement.className = '';
    }
 }
