@@ -1,5 +1,5 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {JsonServerService} from '../Services/json-server.service';
 
 @Component({
@@ -9,8 +9,6 @@ import {JsonServerService} from '../Services/json-server.service';
 })
 export class MonoDialogComponent {
 
-  nameTooShort = false;
-  messageTooShort = false;
   userName = '';
   userMessage = '';
 
@@ -20,11 +18,6 @@ export class MonoDialogComponent {
   }
 
   sendToJsonServer() {
-    this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
-    this.dialogRef.close();
-  }
-
-  deleteToJsonServer() {
     this.service.sendToJson({userName: this.data.userName, userMessage: this.data.userMessage});
     this.dialogRef.close();
   }

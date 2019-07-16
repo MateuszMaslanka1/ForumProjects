@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthStateService} from './Services/auth-state.service';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {isNullOrUndefined} from 'util';
 import {Router} from '@angular/router';
-import {MonoDialogComponent} from './mono-dialog/mono-dialog.component';
-import {MatDialog} from '@angular/material';
 
 
 @Component({

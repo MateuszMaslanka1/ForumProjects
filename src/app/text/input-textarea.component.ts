@@ -1,8 +1,6 @@
-import {Component, ElementRef, Inject, OnInit, Renderer2, ViewChild} from '@angular/core';
-import {JsonServerService} from '../Services/json-server.service';
-import {UserData} from '../model/UserData';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {MonoDialogComponent} from '../mono-dialog/mono-dialog.component';
 
 
@@ -15,7 +13,7 @@ export class InputTextareaComponent implements OnInit {
 
   @ViewChild('addClassForButton', null) addClassForButton: ElementRef;
 
-  constructor(private service: JsonServerService, private renderer: Renderer2, public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   userName = '';
   userMessage = '';

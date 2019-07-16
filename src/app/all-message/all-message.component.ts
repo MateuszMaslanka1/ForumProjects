@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {JsonServerService} from '../Services/json-server.service';
-import {UserData} from '../model/UserData';
-import {Observable} from 'rxjs';
-import * as firebase from 'firebase';
-import {element} from 'protractor';
 
 @Component({
   selector: 'app-all-message',

@@ -1,7 +1,6 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthService} from '../Services/auth-service';
-import {AuthStateService} from '../Services/auth-state.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,7 @@ import {AuthStateService} from '../Services/auth-state.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public af: AngularFireAuth, public auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }

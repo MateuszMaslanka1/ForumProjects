@@ -1,11 +1,8 @@
-import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 import {UserData} from '../model/UserData';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabase } from '@angular/fire/database';
-import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 
 @Injectable({
@@ -13,15 +10,9 @@ import * as firebase from 'firebase';
 })
 export class JsonServerService {
 
-   notesCollection: AngularFirestoreCollection<UserData>;
-
-   note: Observable<UserData[]>;
-
   message;
 
-  constructor(private http: HttpClient, private angularFirestore: AngularFirestore) {
-
-  }
+  constructor(private http: HttpClient, private angularFirestore: AngularFirestore) {}
 
   private addressList$ = new BehaviorSubject<Array<UserData>>([]);
 
@@ -37,10 +28,6 @@ export class JsonServerService {
    }
 
    getFromJson() {
-       // this.notesCollection = this.angularFirestore.collection('message');
-       // console.log(this.notesCollection);
-       // return this.note = this.notesCollection.valueChanges();
-      // return this.http.get<Array<UserData>>('http://localhost:3000/message');
      return this.http.get<Array<UserData>>(`https://dbforforum.firebaseio.com/message.json`);
    }
 
